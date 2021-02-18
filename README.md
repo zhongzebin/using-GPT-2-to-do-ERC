@@ -27,7 +27,7 @@ Steps:
     
 2. Set specidal tokens
 
-    &lt;bos&gt; <eos> <speaker> <speaker1> <speaker2> <speaker3> <speaker4> <speaker5> <speaker6> <speaker7> <pad>
+    &lt;bos&gt; &lt;eos&gt; &lt;speaker&gt; &lt;speaker1&gt; &lt;speaker2&gt; &lt;speaker3&gt; &lt;speaker4&gt; &lt;speaker5&gt; &lt;speaker6&gt; &lt;speaker7&gt; &lt;pad&gt;
     
 3. Reconstruct the input utterances
 
@@ -35,10 +35,10 @@ Steps:
     
     Reconstruct the input utterances according to the sent_no and add the special tokens. 
     
-    <bos> <speaker> utterance1 <speaker> utterance2 ... <speaker> utterance10 <eos>
+    &lt;bos&gt; &lt;speaker&gt; utterance1 &lt;speaker&gt; utterance2 ... &lt;speaker&gt; utterance10 &lt;eos&gt;
     
 4. Segment embeddings
 
     Do segment embeddings according to the speaker's name. In practice, the number of speakers in our input utterances is no more than 7.
     
-    Each token in one speaker's utterance is set to the same segment embedding <speaker1/2/3/4/5/6/7>. Different speakers have different segment embeddings.
+    Each token in one speaker's utterance is set to the same segment embedding &lt;speaker1/2/3/4/5/6/7&gt;. Different speakers have different segment embeddings.
