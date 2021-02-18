@@ -24,3 +24,21 @@ Steps:
     We need to load the cols named Utterance, Emotion, Dialogue_ID, and Speaker in the csv file.
     
     When loading pipeline models, it may take a long time at the first time.
+    
+2. Set specidal tokens
+
+    <bos> <eos> <speaker> <speaker1> <speaker2> <speaker3> <speaker4> <speaker5> <speaker6> <speaker7> <pad>
+    
+3. Reconstruct the input utterances
+
+    sent_no is set to define how many utterances we will preview. In this code, it is set to 10.
+    
+    Reconstruct the input utterances according to the sent_no and add the special tokens. 
+    
+    <bos> <speaker> utterance1 <speaker> utterance2 ... <speaker> utterance10 <eos>
+    
+4. Segment embeddings
+
+    Do segment embeddings according to the speaker's name. In practice, the number of speakers in our input utterances is no more than 7.
+    
+    Each token in one speaker's utterance is set to the same segment embedding <speaker1/2/3/4/5/6/7>. Different speakers have different segment embeddings.
