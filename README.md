@@ -22,3 +22,5 @@ Steps:
 1. Load the dataset and pipeline model
 
     We need to load the cols named Utterance, Emotion, Dialogue_ID, and Speaker in the csv file.
+    
+    When loading pipeline models, it may take a long time at the first time.
