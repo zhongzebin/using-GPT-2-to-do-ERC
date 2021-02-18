@@ -27,7 +27,7 @@ Steps:
     
 2. Set specidal tokens
 
-    <bos> <eos> <speaker> <speaker1> <speaker2> <speaker3> <speaker4> <speaker5> <speaker6> <speaker7> <pad>
+    "<bos> <eos> <speaker> <speaker1> <speaker2> <speaker3> <speaker4> <speaker5> <speaker6> <speaker7> <pad>"
     
 3. Reconstruct the input utterances
 
