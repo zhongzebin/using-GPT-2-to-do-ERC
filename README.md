@@ -25,20 +25,42 @@ Steps:
     
     When loading pipeline models, it may take a long time at the first time.
     
-2. Set specidal tokens
+2. Store the speaker emotional preference for the training set
+
+    The speakers' names are the keys for the dict, and the values are their emotional preference.
+    
+    Each value is a list with a length of 7 (7 different emotions), the algorithm tranverse all the emotions of this speaker and the numbers of each emotion are store them in the list.
+    
+3. Set specidal tokens
 
     &lt;bos&gt; &lt;eos&gt; &lt;speaker&gt; &lt;speaker1&gt; &lt;speaker2&gt; &lt;speaker3&gt; &lt;speaker4&gt; &lt;speaker5&gt; &lt;speaker6&gt; &lt;speaker7&gt; &lt;pad&gt;
     
-3. Reconstruct the input utterances
+4. Reconstruct the input utterances
 
     sent_no is set to define how many utterances we will preview. In this code, it is set to 10.
     
     Reconstruct the input utterances according to the sent_no and add the special tokens. 
     
-    &lt;bos&gt; &lt;speaker&gt; utterance1 &lt;speaker&gt; utterance2 ... &lt;speaker&gt; utterance10 &lt;eos&gt;
+    &lt;bos&gt; &lt;speaker&gt; utterance1 &lt;speaker&gt; utterance2 ... &lt;speaker&gt; utterance10 emotion &lt;eos&gt;
     
-4. Segment embeddings
+5. Segment embeddings
 
     Do segment embeddings according to the speaker's name. In practice, the number of speakers in our input utterances is no more than 7.
     
     Each token in one speaker's utterance is set to the same segment embedding &lt;speaker1/2/3/4/5/6/7&gt;. Different speakers have different segment embeddings.
+    
+6. Tokenize, embed and lm_target
+
+    Tokenize the input utterances and add the segment embeddings and position embeddings.
+    
+    The lm_target (the utterance we want to predict) is set to -1 ... -1 tokenize(emotion) tokenize(&lt;eos&gt;).
+    
+7. Padding
+
+    In order to ensure each input and lm_target has the same length before they are put into the model, padding is needed. tokenize(&lt;pad&gt;) is added.
+    
+8. Finetune
+
+    
+
+    
