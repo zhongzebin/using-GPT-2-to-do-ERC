@@ -29,7 +29,7 @@ Steps:
 
     The speakers' names are the keys for the dict, and the values are their emotional preference.
     
-    Each value is a list with a length of 7 (7 different emotions), the algorithm tranverse all the emotions of this speaker and the numbers of each emotion are store them in the list.
+    Each value is a list with a length of 7 (7 different emotions), the algorithm tranverses all the emotions of this speaker and the numbers of each emotion are stores them in the list.
     
 3. Set specidal tokens
 
