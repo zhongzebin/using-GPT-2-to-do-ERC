@@ -61,6 +61,12 @@ Steps:
     
 8. Finetune
 
+    Use Adam optimizer, set the learning rate to be 2e-5, and the epsilon to be 1e-8, train for 1 epoch and the batch size is set to 4.
     
+    In each epoch, the model is saved to the dir model_save.
+    
+    In the validation process, the batch size is set to 16, and the F1-score is printed.
 
-    
+9. Test
+
+    In the test part, the batch size is set to 16. After having obtained the model's output, the two most possible emotions and their possibilities are stored. Then, if the speaker appeared in the training set, his/her emotional preference will be called. 0.9*output possiblility+0.1*preference possibility=final possibility.
