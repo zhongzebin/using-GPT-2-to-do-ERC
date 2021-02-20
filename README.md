@@ -69,4 +69,8 @@ Steps:
 
 9. Test
 
-    In the test part, the batch size is set to 16. After having obtained the model's output, the two most possible emotions and their possibilities are stored. Then, if the speaker appeared in the training set, his/her emotional preference will be called. 0.9\*output possiblility+0.1\*preference possibility=final possibility.
+    In the test part, the batch size is set to 16. After having obtained the model's output, the two most possible emotions and their possibilities are stored. Then, if the speaker appeared in the training set, his/her emotional preference will be called. 
+    
+    0.9\*output possiblility+0.1\*preference possibility=final possibility.
+
+    The emotion with the highest possibility will be selected.
